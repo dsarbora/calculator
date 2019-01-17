@@ -1,32 +1,50 @@
 
-var number1 = parseInt(prompt("Enter a number:"));
-var number2 = parseInt(prompt("Enter another number:"));
-
-// addition
 var add = function(number1, number2) {
   return number1 + number2;
 };
-var resultAdd = add(number1, number2);
-alert("Sum: " + resultAdd);
-
-// subtract
 var subtract = function(number1, number2) {
   return number1 - number2;
 };
-var resultSubtract = subtract(number1, number2);
-alert("Difference: " + resultSubtract);
-
-// multiply
 var multiply = function(number1, number2) {
   return number1 * number2;
 };
-var resultMultiply = multiply(number1, number2);
-alert("Product: " + resultMultiply);
-
-// divide
 var divide = function(number1, number2) {
   return number1 / number2;
 };
+$(document).ready(function(){
+  $("#addSubmit").click(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = add(number1, number2);
+    $("#output").text(result);
+  });
+  $("#subtractSubmit").click(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = subtract(number1, number2);
+    $("#output").text(result);
+  });
+  $("#multSubmit").click(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = multiply(number1, number2);
+    $("#output").text(result);
+  });
+  $("#divideSubmit").click(function(event) {
+    event.preventDefault();
+    var number1 = parseInt($("#add1").val());
+    var number2 = parseInt($("#add2").val());
+    var result = divide(number1, number2);
+    $("#output").text(result);
+  });
+});
 
-var resultDivide = divide(number1, number2);
-alert("Quotient: " + resultDivide);
+
+/*
+//the easy way
+var calc = eval(prompt("this is a calculator"));
+  alert(parseInt(calc));
+*/
